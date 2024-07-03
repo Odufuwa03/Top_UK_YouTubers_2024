@@ -162,7 +162,7 @@ And here is a tabular representation of the expected schema for the clean data:
 
 ## Transform the data
 
-'''sql
+```sql
 /*
 # Data cleaning steps
 
@@ -201,7 +201,7 @@ from
 
 ## Create the SQL view
 
-'''sql
+```sql
  CREATE VIEW view_top_uk_youtubers_2024 AS
 
  SELECT 
@@ -218,9 +218,10 @@ from
 Here are the data quality tests conducted:
 ### Row count check
 
-'''sql
--- Row count check
+```sql
+--- Row count check
 SELECT COUNT(*) as no_of_rows
 FROM [youtube_db].[dbo].[view_top_uk_youtubers_2024]
 ![row count](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/b94abc9f-aa69-4bf7-bd52-7f18fc862f35)
+
 ![row count 1](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/2673c9b7-5860-422c-92fb-a38822175d97)
