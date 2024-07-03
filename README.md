@@ -29,3 +29,45 @@
   - [Potential ROI](#potential-roi)
   - [Potential Courses of Actions](#potential-courses-os-actions)
 - [Conclusion](#conclusion)
+
+# Objective
+
+### Key Pain Point
+
+The Head of Marketing needs to identify the top YouTubers in 2024 to determine the best influencers for marketing campaigns throughout the year.
+
+### Ideal Solution
+
+Develop a dashboard that offers insights into the leading UK YouTubers in 2024, including:
+
+- Subscriber count
+- Total views
+- Total videos
+- Engagement metrics
+
+This dashboard will enable the marketing team to make informed decisions about which YouTubers to collaborate with for their campaigns.
+
+# User Story
+
+### Revised Text
+
+As the Head of Marketing, I seek to utilize a dashboard that analyzes YouTube channel data in the UK.
+
+This dashboard should enable the identification of top-performing channels based on metrics such as subscriber count and average views.
+
+Armed with this information, I can make more informed decisions about selecting the right YouTubers for collaborations, thereby maximizing the effectiveness of each marketing campaign.
+
+# Data Source
+
+What data is needed to achieve our objective?
+We need data on the top UK YouTubers in 2024 that includes their
+
+- channel names
+
+- total subscribers
+
+- total views
+
+- total videos uploaded
+
+Where is the data coming from? The data is sourced from Kaggle (an Excel extract), [see here to find it](https://www.kaggle.com/datasets/bhavyadhingra00020/top-100-social-media-influencers-2024-countrywise?resource=download)
