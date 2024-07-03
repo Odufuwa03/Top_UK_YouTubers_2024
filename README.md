@@ -93,3 +93,11 @@ To understand what it should contain, we need to figure out what questions we ne
 6. Which 3 channels have the highest subscriber engagement rate per video uploaded?
 
 For now, these are some of the questions we need to answer, this may change as we progress down our analysis.
+
+# Tools
+
+| Tools     | Purpose |
+| --------- | ------- |
+| Excel|Exploring the data|
+| SQL Server|Cleaning, testing, and analyzing the data|
+| Power BI | Visualizing the data via interactive dashboards|
