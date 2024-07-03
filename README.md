@@ -159,3 +159,68 @@ And here is a tabular representation of the expected schema for the clean data:
 1. Remove unnecessary columns by only selecting the ones you need
 2. Extract Youtube channel names from the first column
 3. Rename columns using aliases
+
+## Transform the data
+
+'''sql
+/*
+# Data cleaning steps
+
+1. Remove unnecessary columns by selecting the ones we need
+2. Extract youtube channel names from first columns
+3. Rename the columns names
+ 
+
+*/
+
+-- 1.
+select 
+	NOMBRE,
+	total_subscribers,
+	total_videos,
+	total_views
+from 
+	top_uk_youtubers_2024
+
+-- 2.
+ -- CHAIRINDEX
+
+ SELECT CHARINDEX('@', NOMBRE), NOMBRE FROM top_uk_youtubers_2024
+
+ -- SUBSTRING
+
+ 
+-- 3.
+ SELECT 
+	CAST (SUBSTRING(NOMBRE, 1, CHARINDEX('@', NOMBRE) -1) AS varchar(100)) AS channel_name,
+	total_subscribers,
+	total_videos,
+	total_views
+ FROM 
+	top_uk_youtubers_2024
+
+## Create the SQL view
+
+'''sql
+ CREATE VIEW view_top_uk_youtubers_2024 AS
+
+ SELECT 
+	CAST (SUBSTRING(NOMBRE, 1, CHARINDEX('@', NOMBRE) -1) AS varchar(100)) AS channel_name,
+	total_subscribers,
+	total_videos,
+	total_views
+ FROM 
+	top_uk_youtubers_2024
+
+ ## Testing
+
+- What data quality and validation checks are you going to create?
+Here are the data quality tests conducted:
+### Row count check
+
+'''sql
+-- Row count check
+SELECT COUNT(*) as no_of_rows
+FROM [youtube_db].[dbo].[view_top_uk_youtubers_2024]
+![row count](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/b94abc9f-aa69-4bf7-bd52-7f18fc862f35)
+![row count 1](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/2673c9b7-5860-422c-92fb-a38822175d97)
