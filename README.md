@@ -290,7 +290,8 @@ HAVING
 ## Results
 - What does the visualization look like?
 
-![ec915a1621754f299bdf106885955d70-ezgif com-video-to-gif-converter (1)](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/761982ab-0f0a-499c-9451-2de077cb7645)
+![bf0a78baca7a4923995b537d166ebc1b-ezgif com-video-to-gif-converter](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/84d3d899-56f4-44c1-9bec-d5e16eddf2bb)
+
 
 This shows the Top UK Youtubers in 2024 so far.
 
