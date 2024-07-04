@@ -224,6 +224,77 @@ Here are the data quality tests conducted:
 SELECT COUNT(*) as no_of_rows
 FROM [youtube_db].[dbo].[view_top_uk_youtubers_2024]
 ```
+#### Output
 ![row count](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/b94abc9f-aa69-4bf7-bd52-7f18fc862f35)
 
 ![row count 1](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/2673c9b7-5860-422c-92fb-a38822175d97)
+
+### Column count check
+
+```sql
+-- 2. Column count check
+
+SELECT 
+	COUNT (*) AS column_count 
+FROM 
+	INFORMATION_SCHEMA.COLUMNS
+WHERE 
+	TABLE_NAME = 'view_top_uk_youtubers_2024'
+```
+#### Output
+![column count](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/b99b233a-2f9a-4d19-b092-952af322ef61)
+
+![column count 1](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/a89f3d74-1c89-4177-a126-29dfb4654ba2)
+
+### Data type check
+
+```sql
+-- 3. Data types check
+
+SELECT 
+	COLUMN_NAME,
+	DATA_TYPE
+FROM 
+	INFORMATION_SCHEMA.COLUMNS
+WHERE 
+	TABLE_NAME = 'view_top_uk_youtubers_2024'
+```
+#### Output
+![Data type](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/1b78ddfe-61c8-46e7-a28a-2e6c10c80920)
+
+![Data type1](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/d5a61a08-b438-4cf6-8ddc-6c6e08bfc786)
+
+### Duplicate count check
+
+```sql
+-- 4. Duplicate records check
+
+SELECT
+	channel_name,
+	COUNT(*) AS duplicat_count
+FROM 
+	view_top_uk_youtubers_2024
+GROUP BY 
+	channel_name
+HAVING 
+	COUNT(*) > 1
+```
+
+#### Output
+![duplicate](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/a6b492aa-c6be-4fde-8992-b1e097867132)
+
+![duplicate1](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/d4cdec96-7c0c-4555-84be-bb340e27aa25)
+
+# Visualization
+
+## Results
+- What does the visualization look like?
+
+![ec915a1621754f299bdf106885955d70-ezgif com-video-to-gif-converter (1)](https://github.com/Odufuwa03/Top_UK_YouTubers_2024/assets/169449929/761982ab-0f0a-499c-9451-2de077cb7645)
+This shows the Top UK Youtubers in 2024 so far.
+
+
+
+
+
+
