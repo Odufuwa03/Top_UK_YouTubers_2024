@@ -307,6 +307,226 @@ VAR totalSubscribers = DIVIDE(sumOfSubscribers, million)
 RETURN totalSubscribers
 ```
 
+### 2. Total Videos
 
+```dax
+Total Videos = 
+VAR totalVideos = SUM(view_top_uk_youtubers_2024[total_videos])
 
+RETURN totalVideos
+```
 
+### 3. Total Views (B)
+
+```dax
+Total Views (B) = 
+VAR billion = 1000000000
+VAR sumOfTotalViews = SUM(view_top_uk_youtubers_2024[total_views])
+VAR totalViews = DIVIDE(sumOfTotalViews, billion)
+
+RETURN totalViews
+```
+
+### 4. Views Per subscriber
+
+```dax
+Views Per subscriber = 
+VAR sumOfTotalViews = SUM(view_top_uk_youtubers_2024[total_views])
+VAR sumOfTotalsubscribers = SUM(view_top_uk_youtubers_2024[total_subscribers])
+VAR viewsPerSubscribers = DIVIDE(sumOfTotalViews, sumOfTotalsubscribers, BLANK())
+
+RETURN viewsPerSubscribers
+```
+
+### 5. Avg Views per Videos (M)
+
+```dax
+Avg Views per Videos (M) = 
+VAR sumOfTotalViews = SUM(view_top_uk_youtubers_2024[total_views])
+VAR sumOfTotalVideos = SUM(view_top_uk_youtubers_2024[total_videos])
+VAR avgViewsPerVideo = DIVIDE(sumOfTotalViews, sumOfTotalVideos, BLANK())
+VAR finalAvgViewsPerVideo = DIVIDE(avgViewsPerVideo, 1000000, BLANK())
+
+RETURN finalAvgViewsPerVideo
+```
+
+### 6.Subscriber Engagement Rate
+
+```dax
+Subscriber Engagement Rate = 
+VAR sumOfTotalSubscribers = SUM(view_top_uk_youtubers_2024[total_subscribers])
+VAR sumOfTotalvideos = SUM(view_top_uk_youtubers_2024[total_videos])
+VAR subscriberEngRate =DIVIDE(sumOfTotalSubscribers, sumOfTotalvideos, BLANK())
+
+RETURN subscriberEngRate
+```
+
+# Analysis
+
+## Findings
+- What did we find?
+For this analysis, we're going to focus on the questions below to get the information we need for our marketing client -
+
+Here are the key questions we need to answer for our marketing client:
+
+1. Who are the top 10 YouTubers with the most subscribers?
+2. Which 3 channels have uploaded the most videos?
+3. Which 3 channels have the most views?
+4. Which 3 channels have the highest average views per video?
+5. Which 3 channels have the highest views per subscriber ratio?
+6. Which 3 channels have the highest subscriber engagement rate per video uploaded?
+
+#### 1. Who are the top 10 YouTubers with the most subscribers?
+|Rank |Channel Name    |Subscribers (M)|
+| --------- | ------- | ------- |
+|1 |NoCopyrightSounds  |33.60|
+|2 |DanTDM             |28.60|
+|3 |Dan Rhodes         |26.50|
+|4 |Miss Katy          |24.50|
+|5 |Mister Max         |24.40|
+|6 |KSI                |24.10|
+|7 |Jelly              |23.50|
+|8 |Dua Lipa           |23.30|
+|9 |Sidemen            |21.00|
+|10 |Ali-A             |18.90|
+
+#### 2. Which 3 channels have uploaded the most videos?
+|Rank |Channel Name    |Videos Uploaded|
+| --------- | ------- | ------- |
+|1 |GRM Daily  |14,696|
+|2 |Manchester City   |8,248|
+|3 |Yogscast    |6,435|
+
+#### 3. Which 3 channels have the most views?
+|Rank |Channel Name    |Total Views (B)|
+| --------- | ------- | ------- |
+|1 |DanTDM  |19.78|
+|2 |Dan Rhodes   |18.56|
+|3 |Mister Max   |15.97|
+
+#### 4. Which 3 channels have the highest average views per video?
+|Rank |Channel Name    |Averge Views per Video (M)|
+| --------- | ------- | ------- |
+|1 |Mark Ronson  |32.27|
+|2 |Jessie J  |5.97|
+|3 |Dua Lipa   |5.76|
+
+#### 5. Which 3 channels have the highest views per subscriber ratio?
+|Rank |Channel Name    |Views per Subscriber|
+| --------- | ------- | ------- |
+|1 |GRM Daily  |1185.79|
+|2 |Nickelodeon  |1061.04|
+|3 |Disney Junior UK   |1031.97|
+
+#### 6. Which 3 channels have the highest subscriber engagement rate per video uploaded?
+|Rank |Channel Name    |Subscriber Engagement Rate|
+| --------- | ------- | ------- |
+|1 |Mark Ronson  |343,000|
+|2 |Jessie J  |110,416.67|
+|3 |Dua Lipa   |104,954.95|
+
+### Notes
+For this analysis, we’ll prioritize analysing the metrics that are important in generating the expected ROI for our marketing client, which are the YouTube channels wuth the most
+
+  - subscribers
+  - total views
+  - videos uploaded
+
+# Validation
+
+### 1. Youtubers with the most subscribers
+#### Calculation breakdown
+Campaign idea = product placement
+
+a. NoCopyrightSounds
+- Average views per video = 6.92 million
+- Product cost = $5
+- Potential units sold per video = 6.92 million x 2% conversion rate = 138,400 units sold
+- Potential revenue per video = 138,400 x $5 = $692,000
+- Campaign cost (one-time fee) = $50,000
+- ##### Net profit = $692,000 - $50,000 = $642,000
+
+b. DanTDM
+
+- Average views per video = 5.34 million
+- Product cost = $5
+- Potential units sold per video = 5.34 million x 2% conversion rate = 106,800 units sold
+- Potential revenue per video = 106,800 x $5 = $534,000
+- Campaign cost (one-time fee) = $50,000
+- ##### Net profit = $534,000 - $50,000 = $484,000
+
+c. Dan Rhodes
+
+- Average views per video = 11.15 million
+- Product cost = $5
+- Potential units sold per video = 11.15 million x 2% conversion rate = 223,000 units sold
+- Potential revenue per video = 223,000 x $5 = $1,115,000
+- Campaign cost (one-time fee) = $50,000
+- ##### Net profit = $1,115,000 - $50,000 = $1,065,000
+
+Best option from category: Dan Rhodes
+
+### 2. Youtubers with the most videos uploaded
+#### Calculation breakdown
+Campaign idea = sponsored video series
+
+a. GRM Daily
+- Average views per video = 510,000
+- Product cost = $5
+- Potential units sold per video = 510,000 x 2% conversion rate = 10,200 units sold
+- Potential revenue per video = 10,200 x $5= $51,000
+- Campaign cost (11-videos @ $5,000 each) = $55,000
+- ##### Net profit = $51,000 - $55,000 = -$4,000 (potential loss)
+
+b. Manchester City
+
+- Average views per video = 240,000
+- Product cost = $5
+- Potential units sold per video = 240,000 x 2% conversion rate = 4,800 units sold
+- Potential revenue per video = 4,800 x $5= $24,000
+- Campaign cost (11-videos @ $5,000 each) = $55,000
+- ##### Net profit = $24,000 - $55,000 = -$31,000 (potential loss)
+
+b. Yogscast
+
+- Average views per video = 710,000
+- Product cost = $5
+- Potential units sold per video = 710,000 x 2% conversion rate = 14,200 units sold
+- Potential revenue per video = 14,200 x $5= $71,000
+- Campaign cost (11-videos @ $5,000 each) = $55,000
+- ##### Net profit = $71,000 - $55,000 = $16,000 (profit)
+
+Best option from category: Yogscast
+
+### 3. Youtubers with the most views
+#### Calculation breakdown
+Campaign idea = Influencer marketing
+
+a. DanTDM
+
+- Average views per video = 5.34 million
+- Product cost = $5
+- Potential units sold per video = 5.34 million x 2% conversion rate = 106,800 units sold
+- Potential revenue per video = 106,800 x $5 = $534,000
+- Campaign cost (3-month contract) = $130,000
+- ##### Net profit = $534,000 - $130,000 = $404,000
+
+b. Dan Rhodes
+
+- Average views per video = 11.15 million
+- Product cost = $5
+- Potential units sold per video = 11.15 million x 2% conversion rate = 223,000 units sold
+- Potential revenue per video = 223,000 x $5 = $1,115,000
+- Campaign cost (3-month contract) = $130,000
+- ##### Net profit = $1,115,000 - $130,000 = $985,000
+
+c. Mister Max
+
+- Average views per video = 14.06 million
+- Product cost = $5
+- Potential units sold per video = 14.06 million x 2% conversion rate = 281,200 units sold
+- Potential revenue per video = 281,200 x $5 = $1,406,000
+- Campaign cost (3-month contract) = $130,000
+- ##### Net profit = $1,406,000 - $130,000 = $1,276,000
+
+Best option from category: Mister Max
