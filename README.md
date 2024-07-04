@@ -527,6 +527,6 @@ c. Mister Max
 - Potential units sold per video = 14.06 million x 2% conversion rate = 281,200 units sold
 - Potential revenue per video = 281,200 x $5 = $1,406,000
 - Campaign cost (3-month contract) = $130,000
-- ##### Net profit = $1,406,000 - $130,000 = $1,276,000
+##### - Net profit = $1,406,000 - $130,000 = $1,276,000
 
 Best option from category: Mister Max
